@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
-import GetProducts from "../GetProducts";
+// import GetProducts from "../GetProducts";
 import Button_Search from "./Button_Search";
 import style from "./header.module.css";
+import { useFetch } from "../../Hooks/UseFetch";
 
 export default function Input_search() {
   const [value, setValue] = useState("");
-  const [products, setProducts] = useState();
+  // const [products, setProducts] = useState();
   const [products_filtrados, setproducts_filtrados] = useState([]);
   const [ProductsFiltradosActivo, setProductsFiltradosActivo] = useState(true);
-  const funcionproducts = async () => {
-    setProducts(await GetProducts());
-  };
-  useEffect(() => {
-    funcionproducts();
-  }, []);
-
+  const {
+    data: products,
+    loading,
+    error,
+  } = useFetch("https://fakestoreapi.com/products");
   const funcion_onchange = (e) => {
     setValue(e.target.value);
     const products_filtrados = products.filter((item) => {
@@ -29,7 +28,7 @@ export default function Input_search() {
   };
   return (
     <div className={style.div_input_buttons_search}>
-      <div >
+      <div>
         <input
           onChange={(e) => funcion_onchange(e)}
           id="search"

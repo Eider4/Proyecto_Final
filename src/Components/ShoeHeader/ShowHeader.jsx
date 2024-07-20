@@ -1,9 +1,57 @@
+// import React, { useState } from "react";
+// import { Outlet, Link } from "react-router-dom";
+// import style from "./header.module.css";
+// import Input_search from "./Input_search";
+// import Login from "./Login/Login";
+// import Inf_Usuario from "./Inf_Usuario/Inf_Usuario";
+
+// export default function ShoeHeader() {
+//   const [menuHamburguesa, setMenuHamburguesa] = useState(false);
+//   const [showModal, setShowModal] = useState(false);
+//   const [currentUser, setCurrentUser] = useState(null);
+
+//   // Lógica para manejar el modal
+//   const handleOpenModal = () => setShowModal(true);
+//   const handleCloseModal = () => setShowModal(false);
+
+//   return (
+//     <>
+//       <header className={style.header}>
+//         <Link to="/" className={style.header_logo}>
+//           <img src="logo.png" alt="Logo" />
+//           <span>Shop</span>
+//         </Link>
+//         <Input_search />
+//         <button className={style.user_info_button} onClick={handleOpenModal}>
+//           Información del Usuario
+//         </button>
+//       </header>
+
+//       {showModal && (
+//         <div className={style.modal} onClick={handleCloseModal}>
+//           <div className={style.modal_content} onClick={(e) => e.stopPropagation()}>
+//             <button className={style.close_modal} onClick={handleCloseModal}>
+//               &times;
+//             </button>
+//             {currentUser ? (
+//               <Inf_Usuario usuario={currentUser} />
+//             ) : (
+//               <Login setCurrentUser={setCurrentUser} />
+//             )}
+//           </div>
+//         </div>
+//       )}
+
+//       <Outlet />
+//     </>
+//   );
+// }
 import { useState } from "react";
-import MostrarFormularioInscripcion from "../MostrarFormulario/MostrarFormularioInscripcion";
 import { Outlet, Link } from "react-router-dom";
 import style from "./header.module.css";
 import Input_search from "./Input_search";
-import Login from "../../pages/Login/Login";
+import Login from "./Login/Login";
+// import Login from "../../pages/Login/Login";
 
 export default function ShoeHeader() {
   const [menuHamburguesa, setmenuHamburguesa] = useState(false);

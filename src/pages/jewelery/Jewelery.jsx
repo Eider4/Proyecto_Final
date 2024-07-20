@@ -1,28 +1,29 @@
-import { useEffect, useState } from "react";
-import ShoeHeader from "../../components/ShoeHeader/ShoeHeader";
-import GetProductsCategory from "../GetProductsCategory/GetProductsCategory";
-import ShoeProducts from "../../../components/ShowProducts/ShowProducts";
+import ShoeHeader from "../../Components/ShoeHeader/ShowHeader";
+import ShoeProducts from "../../Components/ShowProducts/ShowProducts";
+import { useFetch } from "../../Hooks/UseFetch";
 
 const Jewelery = () => {
   const Category = "jewelery";
-  const [Get_category, setGet_category] = useState([]);
-  const funcionGetCategory = async () => {
-    const Get_category = await GetProductsCategory(Category);
-    setGet_category(Get_category);
-  };
-  useEffect(() => {
-    funcionGetCategory();
-  }, []);
-
+  const {
+    data: products,
+    loading,
+    error,
+  } = useFetch(`https://fakestoreapi.com/products/category/${Category}`);
   return (
     <>
+      {error && <p>ERROR: {error}</p>}
+      {loading && <p>Cargando...</p>}
       <ShoeHeader />
-      <h1>jewelery </h1>
-      <div id="containerProducts" className="container-products">
-        {Get_category.map((e) => (
-          <ShoeProducts key={e.id} {...e} />
-        ))}
-      </div>
+      {products && (
+        <>
+          <h1>Jewelery</h1>
+          <div id="containerProducts" className="container-products">
+            {products.map((e) => (
+              <ShoeProducts key={e.id} {...e} />
+            ))}
+          </div>
+        </>
+      )}
     </>
   );
 };

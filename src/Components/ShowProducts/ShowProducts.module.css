@@ -1,0 +1,15 @@
+.div_new {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #263233; /* Background color */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.div_new:hover {
+  background-color: #224346; /* Hover color */
+}

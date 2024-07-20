@@ -1,0 +1,25 @@
+.header_Video {
+  padding: 34px;
+}
+
+.video_background {
+  width: 100%;
+}
+.container_products {
+  margin: 0%;
+  padding-top: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  /* gap: 40px; */
+  align-items: space-around;
+}
+.div_category_All{
+  background-color: rgba(1, 32, 12, 0.719);
+  padding-top: 0.015vh;
+  padding-bottom:0 ;
+}
+.Categories_h1{
+margin: 0% ;
+}

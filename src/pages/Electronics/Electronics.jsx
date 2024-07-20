@@ -1,5 +1,6 @@
-import ShoeHeader from "../../components/ShoeHeader/ShoeHeader";
-import ShoeProducts from "../../../components/ShowProducts/ShowProducts";
+// import ShoeProducts from "../../../components/ShowProducts/ShowProducts";
+import ShoeHeader from "../../Components/ShoeHeader/ShowHeader";
+import ShoeProducts from "../../Components/ShowProducts/ShowProducts";
 import { useFetch } from "../../Hooks/UseFetch";
 
 const Electronics = () => {
