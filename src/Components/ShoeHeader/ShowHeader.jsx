@@ -12,7 +12,7 @@ export default function ShoeHeader({ category }) {
   return (
     <>
       <header id="header" className={style.header}>
-        <div>
+        <div className={style.inf_header}>
           <button
             className={style.menu_toggle}
             onClick={() => setMenuHamburguesa(!menuHamburguesa)}
@@ -20,7 +20,7 @@ export default function ShoeHeader({ category }) {
           >
             {menuHamburguesa ? "✕" : "☰"}
           </button>
-          <h1>{category}</h1>
+          <h1 >{category}</h1>
         </div>
         <Input_search />
         <Login usuario1={usuario1} setUsuario={setUsuario} />

@@ -30,7 +30,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className={style.header_inf}>
       {currentUser ? (
         <div>
           {/* <p>Bienvenido,<br />{ currentUser.displayName}!</p> */}

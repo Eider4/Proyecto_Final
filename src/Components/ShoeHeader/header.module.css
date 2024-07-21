@@ -1,37 +1,35 @@
-/* header.module.css */
-
-/* Estilos para el header */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 15px 30px;
-  background-color: #1e2a38; /* Azul oscuro metálico */
-  color: #00bcd4; /* Cian vibrante */
+  background-color: #1e2a38;
+  color: #00bcd4;
   position: relative;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   position: sticky;
   top: 0;
   left: 0;
   z-index: 3;
+  height: 60px;
+  border-radius: 0;
 }
 
-/* Botón de menú hamburguesa */
 .menu_toggle {
   background: none;
   border: none;
+  margin-top: 15px;
   font-size: 30px;
-  color: #00bcd4; /* Cian vibrante */
+  color: #00bcd4;
   cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .menu_toggle:hover {
-  color: #0097a7; /* Cian más oscuro */
+  color: #0097a7;
   transform: rotate(90deg);
 }
 
-/* Estilos para la búsqueda */
 .div_input_buttons_search {
   flex: 1;
   display: flex;
@@ -46,20 +44,21 @@
   max-width: 400px;
   outline: none;
   font-size: 16px;
-  background-color: #2c3e50; /* Gris oscuro */
-  color: #ecf0f1; /* Blanco grisáceo */
+  background-color: #2c3e50;
+  color: #ecf0f1;
   transition: background-color 0.3s ease, border 0.3s ease;
 }
 
 .search:focus {
-  background-color: #1e2a38; /* Gris más oscuro */
-  border: 2px solid #00bcd4; /* Cian vibrante */
+  background-color: #1e2a38;
+  border: 2px solid #00bcd4;
 }
 
-/* Botones de categorías */
 .botones_category {
-  background-color: #00e676; /* Verde neón */
-  color: #fff; /* Blanco */
+  display: flex;
+  flex-direction: column;
+  background-color: #00e676;
+  color: #fff;
   border: none;
   padding: 10px 20px;
   margin: 5px;
@@ -69,14 +68,13 @@
 }
 
 .botones_category:hover {
-  background-color: #00c853; /* Verde más oscuro */
+  background-color: #00c853;
   transform: scale(1.05);
 }
 
-/* Cantidad de productos en el carrito */
 .cantidad_products_car {
-  background-color: #ff6f00; /* Naranja brillante */
-  color: #fff; /* Blanco */
+  background-color: #ff6f00;
+  color: #fff;
   border-radius: 50%;
   padding: 5px 10px;
   font-size: 14px;
@@ -85,12 +83,11 @@
   right: -10px;
 }
 
-/* Menú hamburguesa */
 .navegacion_botones_category {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #1e2a38; /* Azul oscuro metálico */
+  background-color: #1e2a38;
   width: 260px;
   height: 100vh;
   padding: 20px;
@@ -109,51 +106,41 @@
   background: none;
   border: none;
   font-size: 30px;
-  color: #00bcd4; /* Cian vibrante */
+  color: #00bcd4;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .navegacion_botones_category button.close_menu:hover {
-  color: #0097a7; /* Cian más oscuro */
+  color: #0097a7;
 }
 
-/* Contenedor del input de búsqueda y los botones de búsqueda */
 .div_input_buttons_search {
-  position: relative;
   max-width: 400px;
   margin: 0 auto;
   padding: 10px;
-  background: linear-gradient(
-    135deg,
-    #1e2a38,
-    #2c3e50,
-    #34495e
-  ); /* Gradient background */
+  background: linear-gradient(135deg, #1e2a38, #2c3e50, #34495e);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilo del input de búsqueda */
 .search {
   width: 100%;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background: #2c3e50; /* Gris oscuro */
-  color: #ecf0f1; /* Blanco grisáceo */
+  background: #2c3e50;
+  color: #ecf0f1;
   font-size: 16px;
   outline: none;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto al enfocarse en el input de búsqueda */
 .search:focus {
-  background: #1e2a38; /* Gris más oscuro */
-  box-shadow: 0 0 10px rgba(0, 188, 212, 0.7); /* Glowing effect */
+  background: #1e2a38;
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.7);
 }
 
-/* Contenedor de los botones de búsqueda filtrados */
 .div_search_Buttons {
   position: absolute;
   top: 100%;
@@ -168,14 +155,13 @@
   padding: 10px 0;
 }
 
-/* Estilo de los botones de búsqueda filtrados */
 .Button_div_search_Buttons {
   display: block;
   width: 100%;
   padding: 10px 20px;
   border: none;
-  background: #00bcd4; /* Vibrant cyan color */
-  color: #fff; /* Blanco */
+  background: #00bcd4;
+  color: #fff;
   font-size: 16px;
   text-align: left;
   border-bottom: 1px solid #eee;
@@ -183,35 +169,34 @@
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
-/* Efecto al pasar el cursor sobre los botones de búsqueda */
 .Button_div_search_Buttons:hover {
-  background: #0097a7; /* Darker cyan color */
-  transform: scale(1.02); /* Slightly increase size */
+  background: #0097a7;
+  transform: scale(1.02);
 }
 
-/* Estilo de los botones de búsqueda filtrados seleccionados */
 .Button_div_search_Buttons:active {
-  background: #00796b; /* Even darker color for active state */
+  background: #00796b;
 }
 
-/* Media Queries para responsividad */
-
-/* Pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 820px) {
   .header {
     flex-direction: column;
     padding: 10px 20px;
-    position: relative;
-    display: flex;
     justify-content: space-between;
     align-items: start;
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    width: 94.59%;
+    height: 120px;
   }
 
   .div_input_buttons_search {
-    margin-top: 10px;
-    width: 530%;
     position: fixed;
-    left: 30%;
+    width: auto;
+    left: 0;
+    right: 0;
+    /* background-color: #1e2a38; */
   }
 
   .botones_category {
@@ -229,31 +214,24 @@
   }
 }
 
-/* Pantallas muy pequeñas */
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .header {
-    padding: 5px 10px;
+    height: 230px;
     position: relative;
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
   }
-
   .div_input_buttons_search {
-    margin-top: 5px;
-    padding: 5px;
+    position: fixed;
+    width: auto;
+    left: 0;
+    right: 0;
   }
-
-  .botones_category {
-    padding: 6px 12px;
-    font-size: 14px;
+  .inf_header {
+    position: absolute;
+    top: 0;
   }
-
-  .menu_toggle {
-    font-size: 20px;
-  }
-
-  .cantidad_products_car {
-    font-size: 10px;
-    padding: 3px 6px;
+  .div_input_buttons_search {
+    position: absolute;
+    top: 120px;
   }
 }
