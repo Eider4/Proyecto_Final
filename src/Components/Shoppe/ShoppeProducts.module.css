@@ -1,25 +1,43 @@
+/* Estilo del contenedor del video de fondo */
 .header_Video {
-  padding: 34px;
+  position: relative;
+  width: 100%;
+  height: 400px; /* Ajusta la altura según el diseño */
+  overflow: hidden;
+}
+
+.div_video_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
 }
 
 .video_background {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
+/* Contenedor de categorías */
+.div_category_All {
+  padding: 20px;
+  background-color: #1e2a38; /* Azul oscuro metálico */
+  color: #ecf0f1; /* Blanco grisáceo */
+}
+
+.Categories_h1 {
+  text-align: center;
+  font-size: 36px;
+  color: #00bcd4; /* Cian vibrante */
+  margin-bottom: 20px;
+}
+
 .container_products {
-  margin: 0%;
-  padding-top: 0;
-  overflow-x: auto;
-  overflow-y: hidden;
   display: flex;
-  flex-wrap: nowrap;
-  /* gap: 40px; */
-  align-items: space-around;
-}
-.div_category_All{
-  background-color: rgba(1, 32, 12, 0.719);
-  padding-top: 0.015vh;
-  padding-bottom:0 ;
-}
-.Categories_h1{
-margin: 0% ;
+  flex-wrap: wrap;
+  justify-content: center;
 }

@@ -1,9 +1,10 @@
 import { useState } from "react";
-// import MiniPantalla from "../mini-pantalla/MiniPantalla";
 import style from "./header.module.css";
+import MiniPantalla from "../ShowProducts/mini-pantalla/MiniPantalla";
 
 function Button_Search(item) {
-  const [ShowMiniPantalla, setShowMiniPantalla] = useState(false);
+  const [showMiniPantalla, setShowMiniPantalla] = useState(false);
+
   return (
     <>
       <button
@@ -13,7 +14,7 @@ function Button_Search(item) {
       >
         {item.title}
       </button>
-      {/* {ShowMiniPantalla && <MiniPantalla {...item} setShowMiniPantalla={setShowMiniPantalla} />} */}
+      {showMiniPantalla && <MiniPantalla {...item} setShowMiniPantalla={setShowMiniPantalla} />}
     </>
   );
 }

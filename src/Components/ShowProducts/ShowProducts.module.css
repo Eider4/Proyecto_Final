@@ -1,15 +1,20 @@
-.div_new {
+.Button_div_new {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   flex-direction: column;
-  background-color: #263233; /* Background color */
-  padding: 15px;
+  background-color: #2c3e50;
+  padding: 10px;
+  margin: 10px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.div_new:hover {
-  background-color: #224346; /* Hover color */
+.Button_div_new:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }

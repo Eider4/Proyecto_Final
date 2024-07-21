@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-// import MiniPantalla from "../mini-pantalla/MiniPantalla";
-// import CardProduct from "../card-product/CardProduct";
-import style from "./ShowProducts.module.css"
+import style from "./card-product/CardProduct.module.css";
 import CardProduct from "./card-product/CardProduct";
 import MiniPantalla from "./mini-pantalla/MiniPantalla";
 
@@ -12,6 +10,7 @@ export default function ShoeProducts({
   image,
   description,
   category,
+  rating,
 }) {
   const [showMiniPantalla, setShowMiniPantalla] = useState(false);
 
@@ -42,6 +41,7 @@ export default function ShoeProducts({
             image={image}
             description={description}
             category={category}
+            rating={rating}
           />
         )}
       </div>

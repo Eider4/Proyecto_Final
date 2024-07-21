@@ -10,29 +10,26 @@ const Catgorys = [
   { title: "electronics", router: "/electronics", img: electronics },
   { title: "jewelery", router: "/jewelery", img: jewellery },
   { title: "Mens clothing", router: "/mens-clothing", img: mens_clothing },
-  {
-    title: "Womens clothing",
-    router: "/womens-clothing",
-    img: womens_clothing,
-  },
+  { title: "Womens clothing", router: "/womens-clothing", img: womens_clothing },
 ];
-  function Symbol_Category() {
+
+function Symbol_Category() {
   const [Category, setCategory] = useState([]);
   useEffect(() => {
     setCategory(Catgorys);
   }, []);
   return (
-    <>
+    <div className={style.horizontal_scroll_container}>
       {Category.map((e) => (
         <div className={style.div_imagenes_categoy} key={e.title}>
           <Link className="link" to={e.router}>
-              <img className={style.imagenes} src={e.img} alt={e.title} />
-              <h4 className={style.div_imagenes_category}>{e.title}</h4>
+            <img className={style.imagenes} src={e.img} alt={e.title} />
+            <h4 className={style.div_imagenes_category}>{e.title}</h4>
           </Link>
         </div>
       ))}
       <Outlet />
-    </>
+    </div>
   );
 }
 

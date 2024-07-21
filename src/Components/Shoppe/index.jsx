@@ -1,18 +1,16 @@
-import { useEffect, useState } from "react";
-// import GetProducts from "./components/GetProducts";
-import { Outlet } from "react-router-dom";
+import { useEffect } from "react";
 import { useFetch } from "../../Hooks/UseFetch";
-// import ShoppeProducts from "./components/shoppe/shoppeProducts";
 import videoSrc from "../../assets/tienda_online.mp4";
 import Symbol_Category from "./Symbol_Category/Symbol_Category";
 import styles from "./ShoppeProducts.module.css";
 
 export default function Shoppe() {
-  const { data, loding, error } = useFetch("https://fakestoreapi.com/products");
+  const { data, loading, error } = useFetch("https://fakestoreapi.com/products");
+
   useEffect(() => {
     console.log(data);
-  }, []);
-  // <ShoppeProducts element={data} />
+  }, [data]);
+
   return (
     <>
       <div className={styles.header_Video}>

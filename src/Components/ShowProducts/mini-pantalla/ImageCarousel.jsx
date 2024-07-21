@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./MiniPantalla.module.css";
+import disco_duro from "./disco_duro/id_1";
 
 const ImageCarousel = ({ onClick, images, title }) => {
   return (
-    <div className={styles.image_carousel}>
-      {images.map((path, i) => (
+    <div className={styles.carousel_container}>
+      {disco_duro.map((path, i) => (
         <img
           id={`num${i}`}
           onClick={() => onClick(path)}
