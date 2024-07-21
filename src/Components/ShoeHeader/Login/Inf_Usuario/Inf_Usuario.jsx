@@ -3,13 +3,7 @@
 import React, { useEffect, useState } from "react";
 import style from "../Login.module.css";
 import { app } from "../../../../Firebase/credenciales";
-import {
-  collection,
-  getFirestore,
-  setDoc,
-  doc,
-  getDoc,
-} from "firebase/firestore";
+import { getFirestore, setDoc, doc, getDoc } from "firebase/firestore";
 
 const base_datos = getFirestore(app);
 
@@ -25,7 +19,6 @@ export default function Inf_Usuario({ usuario, signOut, auth }) {
     telefono: "",
   });
 
-  // Manejar cambios en el formulario de actualización
   const manejarActualizarPerfil = (event) => {
     const { name, value } = event.target;
     setDatosFormulario({
@@ -34,13 +27,12 @@ export default function Inf_Usuario({ usuario, signOut, auth }) {
     });
   };
 
-  // Manejar el envío del formulario de actualización
   const submitEvent = async (e) => {
     e.preventDefault();
     try {
       await setDoc(doc(base_datos, "usuarios", user.uid), datosFormulario);
       setActualizarInf(false);
-      infPerfil(); // Actualiza la información del perfil después de enviar el formulario
+      infPerfil();
     } catch (err) {
       console.log(err);
     }
@@ -56,38 +48,29 @@ export default function Inf_Usuario({ usuario, signOut, auth }) {
 
   const [usuarioPerfil, setUsuarioPerfil] = useState({});
 
-  // Recuperar la información del perfil del usuario desde Firestore
   const infPerfil = async () => {
-    try {
-      const docRef = doc(base_datos, "usuarios", user.uid);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        const datos = docSnap.data();
-        setUsuarioPerfil(datos);
-        setDatosFormulario({
-          nombre: datos.nombre || "",
-          direccion: datos.direccion || "",
-          pais: datos.pais || "",
-          gustos: datos.gustos || "",
-          telefono: datos.telefono || "",
-        }); // Establece los datos del formulario con los datos del usuario
-      } else {
-        console.log("¡No existe tal documento!"); // Error si el documento no existe
-      }
-    } catch (error) {
-      console.log("Error al obtener el documento:", error); // Error en la obtención del documento
-    }
+    const docRef = doc(base_datos, "usuarios", user.uid);
+    const docSnap = await getDoc(docRef);
+    const datos = docSnap.data();
+    setUsuarioPerfil(datos);
+    setDatosFormulario({
+      nombre: datos.nombre || "",
+      direccion: datos.direccion || "",
+      pais: datos.pais || "",
+      gustos: datos.gustos || "",
+      telefono: datos.telefono || "",
+    });
   };
-
   useEffect(() => {
     infPerfil();
   }, [user.uid]);
 
   return (
-    <>
-      <button className={style.button} onClick={() => setActivo(true)}>
-        Ver Información
-      </button>
+    <p>
+      <h3 onClick={() => setActivo(true)}>
+        Bienvenido, <br />
+        {usuarioPerfil.nombre}
+      </h3>
       {activo && (
         <div className={style.modal_container}>
           <div className={style.modal_content}>
@@ -197,6 +180,6 @@ export default function Inf_Usuario({ usuario, signOut, auth }) {
           </div>
         </div>
       )}
-    </>
+    </p>
   );
 }

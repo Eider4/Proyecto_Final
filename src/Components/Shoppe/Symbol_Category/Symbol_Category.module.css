@@ -1,6 +1,7 @@
 /* Contenedor horizontal para las categorías */
 .horizontal_scroll_container {
   display: flex;
+  justify-content: space-around;
   overflow-x: auto; /* Habilita el scroll horizontal */
   padding: 10px 0; /* Espaciado vertical */
   scroll-behavior: smooth; /* Suaviza el desplazamiento */

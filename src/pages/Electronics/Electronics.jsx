@@ -14,10 +14,9 @@ const Electronics = () => {
     <>
       {error && <p>ERROR: {error}</p>}
       {loading && <p>Cargando...</p>}
-      <ShoeHeader />
+      <ShoeHeader category={Category}/>
       {products && (
         <>
-          <h1>Electronics</h1>
           <div id="containerProducts" className="container-products">
             {products.map((e) => (
               <ShoeProducts key={e.id} {...e} />

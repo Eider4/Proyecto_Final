@@ -33,7 +33,7 @@ const Login = () => {
     <div>
       {currentUser ? (
         <div>
-          <p>Bienvenido, {currentUser.displayName}!</p>
+          {/* <p>Bienvenido,<br />{ currentUser.displayName}!</p> */}
           <Inf_Usuario usuario={currentUser} signOut={signOut} auth={auth} />
         </div>
       ) : (

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import style from "./card-product/CardProduct.module.css";
-import CardProduct from "./card-product/CardProduct";
+import style from "./CardProducts/CardProduct.module.css";
+// import CardProduct from "./card-product/CardProduct";
 import MiniPantalla from "./mini-pantalla/MiniPantalla";
+import CardProduct from "./CardProducts/CardProduct";
 
 export default function ShoeProducts({
   id,
@@ -29,9 +30,7 @@ export default function ShoeProducts({
       )}
       <div
         className={style.div_new}
-        onClick={() => {
-          setShowMiniPantalla(true);
-        }}
+        
       >
         {!showMiniPantalla && (
           <CardProduct
@@ -42,6 +41,7 @@ export default function ShoeProducts({
             description={description}
             category={category}
             rating={rating}
+            setShowMiniPantalla={setShowMiniPantalla}
           />
         )}
       </div>

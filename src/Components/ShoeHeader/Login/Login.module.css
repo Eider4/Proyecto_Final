@@ -2,123 +2,138 @@
 
 /* Botón de Iniciar Sesión */
 .login_button {
-    background-color: #00bcd4; /* Cian vibrante */
-    color: #fff; /* Blanco */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .login_button:hover {
-    background-color: #0097a7; /* Cian más oscuro */
-    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
-  }
-  /* Inf_Usuario.module.css */
+  background-color: #00bcd4; /* Cian vibrante */
+  color: #fff; /* Blanco */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
+.login_button:hover {
+  background-color: #0097a7; /* Cian más oscuro */
+  transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+}
 /* Estilos para el modal de información del usuario */
 .modal_container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal_content {
+  background-color: #1e2a38; /* Azul oscuro metálico */
+  color: #ecf0f1; /* Blanco grisáceo */
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  overflow-y: auto; /* Permite desplazamiento si el contenido es demasiado grande */
+  max-height: 90%; /* Limita la altura del contenido */
+}
+
+.close_button {
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #00bcd4; /* Cian vibrante */
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: color 0.3s ease;
+}
+
+.close_button:hover {
+  color: #0097a7; /* Cian más oscuro */
+}
+
+/* Estilo del contenido del perfil */
+.card_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  background-color: #2c3e50; /* Gris oscuro */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  color: #00bcd4; /* Cian vibrante */
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+.button {
+  background-color: #00bcd4; /* Cian vibrante */
+  color: #fff; /* Blanco */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0097a7; /* Cian más oscuro */
+  transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+}
+
+.form_group {
+  margin-bottom: 15px;
+}
+
+.form_group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #00bcd4; /* Cian vibrante */
+}
+
+.form_group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #34495e; /* Gris oscuro */
+  border-radius: 5px;
+  background-color: #fff; /* Blanco */
+  color: #333;
+}
+
+.form_group input:focus {
+  border-color: #00bcd4; /* Cian vibrante */
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 188, 212, 0.5); /* Efecto de resplandor */
+}
+
+@media (max-width: 600px) {
   .modal_content {
-    background-color: #1e2a38; /* Azul oscuro metálico */
-    color: #ecf0f1; /* Blanco grisáceo */
-    padding: 20px;
-    border-radius: 10px;
-    position: relative;
-    width: 90%;
-    max-width: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  }
-  
-  .close_button {
-    background: none;
-    border: none;
-    font-size: 30px;
-    color: #00bcd4; /* Cian vibrante */
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    transition: color 0.3s ease;
-  }
-  
-  .close_button:hover {
-    color: #0097a7; /* Cian más oscuro */
-  }
-  
-  /* Estilo del contenido del perfil */
-  .card_container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .card {
-    background-color: #2c3e50; /* Gris oscuro */
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .card h2 {
-    color: #00bcd4; /* Cian vibrante */
-    margin-bottom: 10px;
-  }
-  
-  .card p {
-    margin: 5px 0;
-  }
-  
-  .button {
-    background-color: #00bcd4; /* Cian vibrante */
-    color: #fff; /* Blanco */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #0097a7; /* Cian más oscuro */
-    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
-  }
-  
-  .form_group {
-    margin-bottom: 15px;
-  }
-  
-  .form_group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #00bcd4; /* Cian vibrante */
-  }
-  
-  .form_group input {
-    width: 100%;
     padding: 10px;
-    border: 1px solid #34495e; /* Gris oscuro */
-    border-radius: 5px;
-    background-color: #fff; /* Blanco */
-    color: #333;
+    max-width: 100%;
   }
-  
-  .form_group input:focus {
-    border-color: #00bcd4; /* Cian vibrante */
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 188, 212, 0.5); /* Efecto de resplandor */
+
+  .button {
+    font-size: 14px;
+    padding: 8px 16px;
   }
-  
+
+  .close_button {
+    font-size: 25px;
+  }
+}
