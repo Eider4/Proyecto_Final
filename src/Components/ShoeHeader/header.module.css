@@ -14,7 +14,13 @@
   height: 60px;
   border-radius: 0;
 }
-
+/* .img_logo{
+  position: absolute;
+  top: 130px;
+  right: 200px;
+  margin-top: 40px; 
+  width: 40px;
+} */
 .menu_toggle {
   background: none;
   border: none;

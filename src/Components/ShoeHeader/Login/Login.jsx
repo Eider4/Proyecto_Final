@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { auth, provider } from "../../../Firebase/credenciales";
 import { signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
 import Inf_Usuario from "./Inf_Usuario/Inf_Usuario";
-import style from './Login.module.css'; // Asegúrate de importar los estilos
+import style from "./Login.module.css"; // Asegúrate de importar los estilos
 
 const Login = () => {
   const [currentUser, setCurrentUser] = useState(null);

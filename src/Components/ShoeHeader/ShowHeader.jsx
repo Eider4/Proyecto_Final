@@ -20,10 +20,16 @@ export default function ShoeHeader({ category }) {
           >
             {menuHamburguesa ? "✕" : "☰"}
           </button>
-          <h1 >{category}</h1>
+          <h1>{category}</h1>
         </div>
         <Input_search />
         <Login usuario1={usuario1} setUsuario={setUsuario} />
+        <img
+          src="../../../public/vite.svg"
+          alt="logo"
+          width="40px"
+          className={style.img_logo}
+        />
       </header>
       <div
         className={`${style.navegacion_botones_category} ${

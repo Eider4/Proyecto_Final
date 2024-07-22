@@ -66,7 +66,7 @@ export default function Inf_Usuario({ usuario, signOut, auth }) {
   }, [user.uid]);
 
   return (
-    <p>
+    <div>
       <h3 onClick={() => setActivo(true)}>
         Bienvenido, <br />
         {usuarioPerfil.nombre}
@@ -180,6 +180,6 @@ export default function Inf_Usuario({ usuario, signOut, auth }) {
           </div>
         </div>
       )}
-    </p>
+    </div>
   );
 }

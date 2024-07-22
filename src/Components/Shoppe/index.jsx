@@ -1,11 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useFetch } from "../../Hooks/UseFetch";
 import videoSrc from "../../assets/tienda_online.mp4";
 import Symbol_Category from "./Symbol_Category/Symbol_Category";
 import styles from "./ShoppeProducts.module.css";
-
+import ProductsList from "./Products/ObtenerDatos";
 export default function Shoppe() {
-  const { data, loading, error } = useFetch("https://fakestoreapi.com/products");
+  const { data, loading, error } = useFetch(
+    "https://fakestoreapi.com/products"
+  );
 
   useEffect(() => {
     console.log(data);
@@ -20,13 +22,13 @@ export default function Shoppe() {
           </video>
         </div>
       </div>
-
       <div className={styles.div_category_All}>
         <h1 className={styles.Categories_h1}>Categories</h1>
         <div id="containerProducts" className={styles.container_products}>
           <Symbol_Category />
         </div>
       </div>
+      <ProductsList />
     </>
   );
 }
