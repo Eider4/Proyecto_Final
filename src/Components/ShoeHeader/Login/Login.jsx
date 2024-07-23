@@ -53,7 +53,8 @@ const Login = () => {
           <Inf_Usuario usuario={currentUser} signOut={signOut} auth={auth} />
         </div>
       ) : (
-        <>
+        <><br />
+        <br />
           <IniciaGoogle style={style} />
           {/* <button className={style.login_button} onClick={IniciarSesionGoogle}>Google</button> */}
           <InicaCorreoPassword style={style} />
