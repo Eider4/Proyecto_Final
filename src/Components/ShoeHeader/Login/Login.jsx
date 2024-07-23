@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import {
   auth,
   providerGoogle,
-  providerFacebook,
-  providerPhone,
+  // providerFacebook,
+  // providerPhone,
 } from "../../../Firebase/credenciales";
 import { signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
 import Inf_Usuario from "./Inf_Usuario/Inf_Usuario";
@@ -33,20 +33,20 @@ const Login = () => {
       console.error("Error during sign in with Google", error);
     }
   };
-  const IniciarSesionFacebook = async () => {
-    try {
-      await signInWithPopup(auth, providerFacebook);
-    } catch (error) {
-      console.error("Error during sign in with Facebook", error);
-    }
-  };
-  const IniciarSesionPhone = async () => {
-    try {
-      await signInWithPhoneNumber(auth, providerPhone);
-    } catch (error) {
-      console.error("Error during sign in with Phone", error);
-    }
-  };
+  // const IniciarSesionFacebook = async () => {
+  //   try {
+  //     await signInWithPopup(auth, providerFacebook);
+  //   } catch (error) {
+  //     console.error("Error during sign in with Facebook", error);
+  //   }
+  // };
+  // const IniciarSesionPhone = async () => {
+  //   try {
+  //     await signInWithPhoneNumber(auth, providerPhone);
+  //   } catch (error) {
+  //     console.error("Error during sign in with Phone", error);
+  //   }
+  // };
   return (
     <div className={style.header_inf}>
       {currentUser ? (
@@ -58,12 +58,12 @@ const Login = () => {
           <button className={style.login_button} onClick={IniciarSesionGoogle}>
             Google
           </button>
-          <button onClick={IniciarSesionFacebook}>
+          {/* <button onClick={IniciarSesionFacebook}>
             Facebook
-          </button>
-          <button onClick={IniciarSesionPhone}>
+          </button> */}
+          {/* <button onClick={IniciarSesionPhone}>
             Phone
-          </button>
+          </button> */}
         </>
       )}
     </div>
