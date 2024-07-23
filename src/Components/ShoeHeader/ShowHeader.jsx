@@ -24,12 +24,6 @@ export default function ShoeHeader({ category }) {
         </div>
         <Input_search />
         <Login usuario1={usuario1} setUsuario={setUsuario} />
-        <img
-          src="../../../public/vite.svg"
-          alt="logo"
-          width="40px"
-          className={style.img_logo}
-        />
       </header>
       <div
         className={`${style.navegacion_botones_category} ${
@@ -44,12 +38,10 @@ export default function ShoeHeader({ category }) {
           ✕
         </button>
         <Link className="link" to="/Carrito-compras">
-          <button className={style.botones_category}>
-            Car Shoppe
-            <div className={style.cantidad_products_car}>
-              {cardShopArray.length}
-            </div>
-          </button>
+          <button className={style.botones_category}>Car Shoppe</button>
+          <div className={style.cantidad_products_car}>
+            {cardShopArray.length}
+          </div>
         </Link>
         <Link className="link" to="/electronics">
           <button className={style.botones_category}>electronics</button>

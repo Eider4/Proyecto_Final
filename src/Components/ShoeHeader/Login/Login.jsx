@@ -1,18 +1,19 @@
-// Login.js
-
 import React, { useEffect, useState } from "react";
-import { auth, provider } from "../../../Firebase/credenciales";
-import { signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../../../Firebase/credenciales";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import style from "./newStyles.module.css";
 import Inf_Usuario from "./Inf_Usuario/Inf_Usuario";
-import style from "./Login.module.css"; // Asegúrate de importar los estilos
+import InicaCorreoPassword from "./inicaCorreoPassword/InicaCorreoPassword";
 
 const Login = () => {
   const [currentUser, setCurrentUser] = useState(null);
-
+  const [Login, setLogin] = useState(false);
+  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setCurrentUser(user);
+        console.log(user);
       } else {
         setCurrentUser(null);
       }
@@ -21,24 +22,23 @@ const Login = () => {
     return unsubscribe;
   }, []);
 
-  const IniciarSesion = async () => {
-    try {
-      await signInWithPopup(auth, provider);
-    } catch (error) {
-      console.error("Error during sign in with Google", error);
-    }
-  };
-
   return (
-    <div className={style.header_inf}>
+    <div className={style.newHeaderInf}>
       {currentUser ? (
         <div>
           <Inf_Usuario usuario={currentUser} signOut={signOut} auth={auth} />
         </div>
       ) : (
-        <button className={style.login_button} onClick={IniciarSesion}>
-          Iniciar Sesión
-        </button>
+        <>
+          {Login ? (
+            <div className={style.Div_IniciarSesion}>
+              <button className={style.newCloseButton} onClick={() => setLogin(false)}>X</button>
+              <InicaCorreoPassword />
+            </div>
+          ) : (
+            <button className={style.newButton} onClick={() => setLogin(true)}>Inicia sesión</button>
+          )}
+        </>
       )}
     </div>
   );
