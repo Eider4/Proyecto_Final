@@ -33,7 +33,6 @@ const Login = () => {
     <div className={style.header_inf}>
       {currentUser ? (
         <div>
-          {/* <p>Bienvenido,<br />{ currentUser.displayName}!</p> */}
           <Inf_Usuario usuario={currentUser} signOut={signOut} auth={auth} />
         </div>
       ) : (

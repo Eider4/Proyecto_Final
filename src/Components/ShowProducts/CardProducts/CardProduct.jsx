@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./CardProduct.module.css";
+import CarImg from "../../../assets/carrito-de-compras.png";
 
 const CardProduct = ({
   id,
@@ -30,6 +31,14 @@ const CardProduct = ({
         <p className={style.products_rating}>
           Rating: {rating.rate} ({rating.count} reviews)
         </p>
+        <>
+          <img
+            src={CarImg}
+            alt="Agragar-Carrito"
+            width="40px"
+            style={{ backgroundColor: "#0000" }}
+          />
+        </>
       </div>
       <div className={style.div_mascara} />
     </div>

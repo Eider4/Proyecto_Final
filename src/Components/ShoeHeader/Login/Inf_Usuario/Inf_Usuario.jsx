@@ -17,6 +17,7 @@ export default function Inf_Usuario({ usuario, signOut, auth }) {
     pais: "",
     gustos: "",
     telefono: "",
+    carritoCompras:[],
   });
 
   const manejarActualizarPerfil = (event) => {

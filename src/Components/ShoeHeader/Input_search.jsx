@@ -9,7 +9,6 @@ export default function Input_search() {
   const [productsFiltradosActivo, setProductsFiltradosActivo] = useState(false);
   const { data: products, loading, error } = useFetch("https://fakestoreapi.com/products");
 
-  // Actualiza los productos filtrados cuando se recibe la lista de productos
   useEffect(() => {
     if (products) {
       const filteredProducts = products.filter((item) =>

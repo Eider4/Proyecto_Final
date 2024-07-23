@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./MiniPantalla.module.css";
 import ImageCarousel from "./ImageCarousel";
+import CarImg from "../../../assets/carrito-de-compras.png";
+import CarShoppe from "../../CarShoope/CarShoppe";
 
 export default function MiniPantalla({
   id,
@@ -13,6 +15,7 @@ export default function MiniPantalla({
 }) {
   const [newImg] = useState([image]);
   const [imageShow, setImageShow] = useState(newImg[0]);
+  const [AgregarCarrito, setAgregarCarrito] = useState(false);
 
   return (
     <div id="mini_pantalla" className={styles.mini_pantalla}>
@@ -39,12 +42,30 @@ export default function MiniPantalla({
           </div>
         </div>
         <div className={styles.info_container}>
-          <p className={styles.id}><b>ID: </b>{id}</p>
+          <p className={styles.id}>
+            <b>ID: </b>
+            {id}
+          </p>
           <h3 className={styles.h3title}>{title}</h3>
           <p className={styles.description}>{description}</p>
-          <p className={styles.category}><b>Category: </b>{category}</p>
-          <p className={styles.price}><b>Price: </b>{price}</p>
+          <p className={styles.category}>
+            <b>Category: </b>
+            {category}
+          </p>
+          <p className={styles.price}>
+            <b>Price: </b>
+            {price}
+          </p>
           <button className={styles.button_borrar}>Delete</button>
+          <img
+            src={CarImg}
+            alt="Agragar-Carrito"
+            width="40px"
+            onClick={() => setAgregarCarrito(true)}
+          />
+          {AgregarCarrito && (
+            <CarShoppe id={id} setAgregarCarrito={setAgregarCarrito} />
+          )}
         </div>
       </div>
     </div>
