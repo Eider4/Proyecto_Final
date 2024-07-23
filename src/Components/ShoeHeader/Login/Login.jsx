@@ -1,15 +1,14 @@
+// providerFacebook,
+// providerPhone,
 // Login.js
 
 import React, { useEffect, useState } from "react";
-import {
-  auth,
-  providerGoogle,
-  // providerFacebook,
-  // providerPhone,
-} from "../../../Firebase/credenciales";
+import { auth /*providerGoogle*/ } from "../../../Firebase/credenciales";
 import { signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
 import Inf_Usuario from "./Inf_Usuario/Inf_Usuario";
-import style from "./Login.module.css"; // Asegúrate de importar los estilos
+import style from "./Login.module.css";
+import InicaCorreoPassword from "./inicaCorreoPassword/InicaCorreoPassword";
+import IniciaGoogle from "./IniciaGoogle/IniciaGoogle";
 
 const Login = () => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -26,13 +25,13 @@ const Login = () => {
     return unsubscribe;
   }, []);
 
-  const IniciarSesionGoogle = async () => {
-    try {
-      await signInWithPopup(auth, providerGoogle);
-    } catch (error) {
-      console.error("Error during sign in with Google", error);
-    }
-  };
+  // const IniciarSesionGoogle = async () => {
+  //   try {
+  //     await signInWithPopup(auth, providerGoogle);
+  //   } catch (error) {
+  //     console.error("Error, al iniciar con Google", error);
+  //   }
+  // };
   // const IniciarSesionFacebook = async () => {
   //   try {
   //     await signInWithPopup(auth, providerFacebook);
@@ -55,15 +54,9 @@ const Login = () => {
         </div>
       ) : (
         <>
-          <button className={style.login_button} onClick={IniciarSesionGoogle}>
-            Google
-          </button>
-          {/* <button onClick={IniciarSesionFacebook}>
-            Facebook
-          </button> */}
-          {/* <button onClick={IniciarSesionPhone}>
-            Phone
-          </button> */}
+          <IniciaGoogle style={style} />
+          {/* <button className={style.login_button} onClick={IniciarSesionGoogle}>Google</button> */}
+          <InicaCorreoPassword style={style} />
         </>
       )}
     </div>
@@ -71,3 +64,10 @@ const Login = () => {
 };
 
 export default Login;
+
+// {/* <button onClick={IniciarSesionFacebook}>
+//             Facebook
+//           </button> */}
+//           {/* <button onClick={IniciarSesionPhone}>
+//             Phone
+//           </button> */}
