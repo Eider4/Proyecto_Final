@@ -46,10 +46,10 @@ export default function ShoeHeader({ category }) {
         <Link className="link" to="/Carrito-compras">
           <button className={style.botones_category}>
             Car Shoppe
+          </button>
             <div className={style.cantidad_products_car}>
               {cardShopArray.length}
             </div>
-          </button>
         </Link>
         <Link className="link" to="/electronics">
           <button className={style.botones_category}>electronics</button>
