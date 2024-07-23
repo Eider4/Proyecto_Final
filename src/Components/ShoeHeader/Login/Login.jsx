@@ -1,22 +1,19 @@
-// providerFacebook,
-// providerPhone,
-// Login.js
-
 import React, { useEffect, useState } from "react";
-import { auth /*providerGoogle*/ } from "../../../Firebase/credenciales";
-import { signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../../../Firebase/credenciales";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import style from "./newStyles.module.css";
 import Inf_Usuario from "./Inf_Usuario/Inf_Usuario";
-import style from "./Login.module.css";
 import InicaCorreoPassword from "./inicaCorreoPassword/InicaCorreoPassword";
-import IniciaGoogle from "./IniciaGoogle/IniciaGoogle";
 
 const Login = () => {
   const [currentUser, setCurrentUser] = useState(null);
-
+  const [Login, setLogin] = useState(false);
+  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setCurrentUser(user);
+        console.log(user);
       } else {
         setCurrentUser(null);
       }
@@ -25,39 +22,22 @@ const Login = () => {
     return unsubscribe;
   }, []);
 
-  // const IniciarSesionGoogle = async () => {
-  //   try {
-  //     await signInWithPopup(auth, providerGoogle);
-  //   } catch (error) {
-  //     console.error("Error, al iniciar con Google", error);
-  //   }
-  // };
-  // const IniciarSesionFacebook = async () => {
-  //   try {
-  //     await signInWithPopup(auth, providerFacebook);
-  //   } catch (error) {
-  //     console.error("Error during sign in with Facebook", error);
-  //   }
-  // };
-  // const IniciarSesionPhone = async () => {
-  //   try {
-  //     await signInWithPhoneNumber(auth, providerPhone);
-  //   } catch (error) {
-  //     console.error("Error during sign in with Phone", error);
-  //   }
-  // };
   return (
-    <div className={style.header_inf}>
+    <div className={style.newHeaderInf}>
       {currentUser ? (
         <div>
           <Inf_Usuario usuario={currentUser} signOut={signOut} auth={auth} />
         </div>
       ) : (
-        <><br />
-        <br />
-          <IniciaGoogle style={style} />
-          {/* <button className={style.login_button} onClick={IniciarSesionGoogle}>Google</button> */}
-          <InicaCorreoPassword style={style} />
+        <>
+          {Login ? (
+            <div className={style.Div_IniciarSesion}>
+              <button className={style.newCloseButton} onClick={() => setLogin(false)}>X</button>
+              <InicaCorreoPassword />
+            </div>
+          ) : (
+            <button className={style.newButton} onClick={() => setLogin(true)}>Inicia sesión</button>
+          )}
         </>
       )}
     </div>
@@ -65,10 +45,3 @@ const Login = () => {
 };
 
 export default Login;
-
-// {/* <button onClick={IniciarSesionFacebook}>
-//             Facebook
-//           </button> */}
-//           {/* <button onClick={IniciarSesionPhone}>
-//             Phone
-//           </button> */}

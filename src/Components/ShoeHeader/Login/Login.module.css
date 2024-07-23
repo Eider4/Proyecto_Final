@@ -122,6 +122,7 @@
   box-shadow: 0 0 5px rgba(0, 188, 212, 0.5); /* Efecto de resplandor */
 }
 
+
 @media (max-width: 820px) {
   .modal_content {
     padding: 10px;

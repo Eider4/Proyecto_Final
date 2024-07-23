@@ -1,0 +1,107 @@
+/* Estilos generales para botones */
+.newButton {
+    background-color: #00bcd4; /* Cian vibrante */
+    color: #fff; /* Blanco */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .newButton:hover {
+    background-color: #0097a7; /* Cian más oscuro */
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+  }
+  
+  /* Estilos para el contenedor principal de Login */
+  .newHeaderInf {
+    position: relative;
+    padding: 20px;
+    background-color: #1e2a38; /* Azul oscuro metálico */
+    color: #ecf0f1; /* Blanco grisáceo */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Estilos específicos para el contenedor de InicaCorreoPassword */
+  .newDivLogins {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #1e2a38; /* Azul oscuro metálico */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    height: 100%;
+  }
+  
+  .newFormGroup {
+    margin-bottom: 15px;
+  }
+  
+  .newFormGroup label {
+    display: block;
+    margin-bottom: 5px;
+    color: #00bcd4; /* Cian vibrante */
+  }
+  
+  .newFormGroup input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #34495e; /* Gris oscuro */
+    border-radius: 5px;
+    background-color: #fff; /* Blanco */
+    color: #333;
+  }
+  
+  .newFormGroup input:focus {
+    border-color: #00bcd4; /* Cian vibrante */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 188, 212, 0.5); /* Efecto de resplandor */
+  }
+  
+  /* Estilos específicos para el botón de cerrar */
+  .newCloseButton {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #00bcd4; /* Cian vibrante */
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .newCloseButton:hover {
+    color: #0097a7; /* Cian más oscuro */
+  }
+  .Div_IniciarSesion{
+    position: fixed;
+    top: 5%;
+    bottom: 15%;
+    left: 20%;
+    right: 20%;
+    width: auto;
+    height: auto;
+    background-color: aqua;
+  }
+  @media (max-width: 820px) {
+    .newHeaderInf, .newDivLogins {
+      padding: 10px;
+      max-width: 100%;
+    }
+  
+    .newButton {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  
+    .newCloseButton {
+      font-size: 25px;
+    }
+  }
+  
