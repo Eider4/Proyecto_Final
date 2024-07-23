@@ -1,4 +1,4 @@
-// Inf_Usuario.js
+// Inf_Usuario.jsx
 
 import React, { useEffect, useState } from "react";
 import style from "../Login.module.css";
@@ -42,34 +42,51 @@ export default function Inf_Usuario({ usuario, signOut, auth }) {
     try {
       await signOut(auth);
     } catch (error) {
-      console.error("Error during sign out", error);
+      console.error("Error durante el cierre de sesión", error);
     }
   };
 
-  const [usuarioPerfil, setUsuarioPerfil] = useState({});
+  const [usuarioPerfil, setUsuarioPerfil] = useState(null);
 
   const infPerfil = async () => {
-    const docRef = doc(base_datos, "usuarios", user.uid);
-    const docSnap = await getDoc(docRef);
-    const datos = docSnap.data();
-    setUsuarioPerfil(datos);
-    setDatosFormulario({
-      nombre: datos.nombre || "",
-      direccion: datos.direccion || "",
-      pais: datos.pais || "",
-      gustos: datos.gustos || "",
-      telefono: datos.telefono || "",
-    });
+    try {
+      const docRef = doc(base_datos, "usuarios", user.uid);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        const datos = docSnap.data();
+        setUsuarioPerfil(datos);
+        setDatosFormulario({
+          nombre: datos.nombre || "",
+          direccion: datos.direccion || "",
+          pais: datos.pais || "",
+          gustos: datos.gustos || "",
+          telefono: datos.telefono || "",
+        });
+      } else {
+        console.log("No se encontró el documento");
+      }
+    } catch (error) {
+      console.error("Error al obtener el perfil:", error);
+    }
   };
+
   useEffect(() => {
-    infPerfil();
-  }, [user.uid]);
+    if (user && user.uid) {
+      infPerfil();
+    }
+  }, [user]);
 
   return (
     <div>
       <h3 onClick={() => setActivo(true)}>
-        Bienvenido, <br />
-        {usuarioPerfil.nombre}
+        {usuarioPerfil ? (
+          <>
+            Bienvenido, <br />
+            {usuarioPerfil.nombre}
+          </>
+        ) : (
+          "Inf"
+        )}
       </h3>
       {activo && (
         <div className={style.modal_container}>
@@ -85,25 +102,40 @@ export default function Inf_Usuario({ usuario, signOut, auth }) {
                 <div className={style.card}>
                   <h2>Perfil de Usuario</h2>
                   <p>
-                    <strong>Correo Electrónico:</strong> {user.email}
+                    <b>Correo Electrónico:</b> {user.email}
                   </p>
                   <p>
-                    <strong>Nombre:</strong> {usuarioPerfil.nombre}
+                    <b>Nombre:</b>{" "}
+                    {usuarioPerfil
+                      ? usuarioPerfil.nombre
+                      : "Actualiza tu nombre"}
                   </p>
                   <p>
-                    <strong>Dirección:</strong> {usuarioPerfil.direccion}
+                    <b>Dirección:</b>{" "}
+                    {usuarioPerfil
+                      ? usuarioPerfil.direccion
+                      : "Actualiza tu direccion"}
                   </p>
                   <p>
-                    <strong>País:</strong> {usuarioPerfil.pais}
+                    <b>País:</b>{" "}
+                    {usuarioPerfil
+                      ? usuarioPerfil.pais
+                      : "Actualiza tu pais    "}
                   </p>
                   <p>
-                    <strong>Gustos:</strong> {usuarioPerfil.gustos}
+                    <b>Gustos:</b>{" "}
+                    {usuarioPerfil
+                      ? usuarioPerfil.gustos
+                      : "Actualiza tus gustos"}
                   </p>
                   <p>
-                    <strong>Teléfono:</strong> {usuarioPerfil.telefono}
+                    <b>Teléfono:</b>{" "}
+                    {usuarioPerfil
+                      ? usuarioPerfil.telefono
+                      : "Actualiza tu telefono"}
                   </p>
                   <p>
-                    <strong>UID:</strong> {user.uid}
+                    <b>UID:</b> {user.uid}
                   </p>
                   <button
                     className={style.button}
