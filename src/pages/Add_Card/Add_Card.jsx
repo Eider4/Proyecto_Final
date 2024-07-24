@@ -4,6 +4,7 @@ import { app, auth } from "../../Firebase/credenciales";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import ShoeProducts from "../../Components/ShowProducts/ShowProducts";
 import { useFetch } from "../../Hooks/UseFetch";
+import styles from './Add_Card.module.css'
 
 const basedatos = getFirestore(app);
 
@@ -52,7 +53,7 @@ export default function Add_Card() {
   if (error) return <p>Error al cargar productos: {error.message}</p>;
 
   return (
-    <div id="containerProducts" className="container-products">
+    <div id="containerProducts" className={styles.container_products}>
       {ProductosFiltrados.map((e) => (
         <ShoeProducts key={e.id} {...e} />
       ))}

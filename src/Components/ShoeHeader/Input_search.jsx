@@ -7,12 +7,20 @@ export default function Input_search() {
   const [value, setValue] = useState("");
   const [productsFiltrados, setProductsFiltrados] = useState([]);
   const [productsFiltradosActivo, setProductsFiltradosActivo] = useState(false);
-  const { data: products, loading, error } = useFetch("https://fakestoreapi.com/products");
+  const {
+    data: products,
+    loading,
+    error,
+  } = useFetch("https://fakestoreapi.com/products");
 
   useEffect(() => {
     if (products) {
-      const filteredProducts = products.filter((item) =>
-        item.title.toLowerCase().includes(value.toLowerCase())
+      const filteredProducts = products.filter(
+        (item) =>
+          item.title.toLowerCase().includes(value.toLowerCase()) ||
+          item.category.toLowerCase().includes(value.toLowerCase()) ||
+          item.id == value||
+          item.description.toLowerCase().includes(value.toLowerCase())
       );
       setProductsFiltrados(filteredProducts);
       setProductsFiltradosActivo(value.length > 0);
@@ -34,7 +42,7 @@ export default function Input_search() {
         className={style.search}
         type="text"
         value={value}
-        placeholder="Search for a product..."
+        placeholder="Busca tu prducto..."
       />
       {productsFiltradosActivo && (
         <div className={style.div_search_Buttons}>
