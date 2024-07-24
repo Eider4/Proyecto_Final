@@ -1,9 +1,8 @@
-// Inf_Usuario.jsx
-
 import React, { useEffect, useState } from "react";
 import style from "../Login.module.css";
 import { app } from "../../../../Firebase/credenciales";
 import { getFirestore, setDoc, doc, getDoc } from "firebase/firestore";
+import DepartamensColombia from "./DepartamentosColombia";
 
 const base_datos = getFirestore(app);
 
@@ -14,10 +13,12 @@ export default function Inf_Usuario({ usuario, signOut, auth }) {
   const [datosFormulario, setDatosFormulario] = useState({
     nombre: "",
     direccion: "",
+    departamento: "",
+    municipio: "",
     pais: "",
     gustos: "",
     telefono: "",
-    carritoCompras:[],
+    carritoCompras: [],
   });
 
   const manejarActualizarPerfil = (event) => {
@@ -59,9 +60,12 @@ export default function Inf_Usuario({ usuario, signOut, auth }) {
         setDatosFormulario({
           nombre: datos.nombre || "",
           direccion: datos.direccion || "",
+          departamento: datos.departamento || "",
+          municipio: datos.municipio || "",
           pais: datos.pais || "",
           gustos: datos.gustos || "",
           telefono: datos.telefono || "",
+          carritoCompras: datos.carritoCompras || [],
         });
       } else {
         console.log("No se encontró el documento");
@@ -110,6 +114,18 @@ export default function Inf_Usuario({ usuario, signOut, auth }) {
                     {usuarioPerfil
                       ? usuarioPerfil.nombre
                       : "Actualiza tu nombre"}
+                  </p>
+                  <p>
+                    <b>Departamento:</b>{" "}
+                    {usuarioPerfil
+                      ? usuarioPerfil.departamento
+                      : "Actualiza tu departamento"}
+                  </p>
+                  <p>
+                    <b>Municipio:</b>{" "}
+                    {usuarioPerfil
+                      ? usuarioPerfil.municipio
+                      : "Actualiza tu municipio"}
                   </p>
                   <p>
                     <b>Dirección:</b>{" "}
@@ -170,6 +186,11 @@ export default function Inf_Usuario({ usuario, signOut, auth }) {
                         placeholder="Dirección"
                       />
                     </div>
+                    <DepartamensColombia
+                      departamento={datosFormulario.departamento}
+                      municipio={datosFormulario.municipio}
+                      manejarActualizarPerfil={manejarActualizarPerfil}
+                    />
                     <div className={style.form_group}>
                       <label>País:</label>
                       <input

@@ -31,14 +31,6 @@ const CardProduct = ({
         <p className={style.products_rating}>
           Rating: {rating.rate} ({rating.count} reviews)
         </p>
-        <>
-          <img
-            src={CarImg}
-            alt="Agragar-Carrito"
-            width="40px"
-            style={{ backgroundColor: "#0000" }}
-          />
-        </>
       </div>
       <div className={style.div_mascara} />
     </div>

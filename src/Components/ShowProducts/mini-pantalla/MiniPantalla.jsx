@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./MiniPantalla.module.css";
 import ImageCarousel from "./ImageCarousel";
 import CarImg from "../../../assets/carrito-de-compras.png";
-import CarShoppe from "../../CarShoope/CarShoppe";
+import CarShoppe from "./CarShoope/CarShoppe";
 
 export default function MiniPantalla({
   id,
@@ -15,7 +15,6 @@ export default function MiniPantalla({
 }) {
   const [newImg] = useState([image]);
   const [imageShow, setImageShow] = useState(newImg[0]);
-  const [AgregarCarrito, setAgregarCarrito] = useState(false);
 
   return (
     <div id="mini_pantalla" className={styles.mini_pantalla}>
@@ -56,16 +55,7 @@ export default function MiniPantalla({
             <b>Price: </b>
             {price}
           </p>
-          <button className={styles.button_borrar}>Delete</button>
-          <img
-            src={CarImg}
-            alt="Agragar-Carrito"
-            width="40px"
-            onClick={() => setAgregarCarrito(true)}
-          />
-          {AgregarCarrito && (
-            <CarShoppe id={id} setAgregarCarrito={setAgregarCarrito} />
-          )}
+          <CarShoppe CarImg={CarImg} id={id} styles={styles} />
         </div>
       </div>
     </div>
