@@ -4,14 +4,8 @@ import videoSrc from "../../assets/tienda_online.mp4";
 import Symbol_Category from "./Symbol_Category/Symbol_Category";
 import styles from "./ShoppeProducts.module.css";
 import ProductsList from "./Products/ObtenerDatos";
-export default function Shoppe() {
-  // const { data, loading, error } = useFetch(
-  //   "https://fakestoreapi.com/products"
-  // );
 
-  // useEffect(() => {
-  //   console.log(data);
-  // }, [data]);
+export default function Shoppe() {
 
   return (
     <>

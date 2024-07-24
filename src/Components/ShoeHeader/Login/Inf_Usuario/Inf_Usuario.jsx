@@ -6,9 +6,9 @@ import DepartamensColombia from "./DepartamentosColombia";
 
 const base_datos = getFirestore(app);
 
-export default function Inf_Usuario({ usuario, signOut, auth }) {
+export default function Inf_Usuario({ user, signOut, auth }) {
+  const [usuarioPerfil, setUsuarioPerfil] = useState(null);
   const [activo, setActivo] = useState(false);
-  const [user, setUser] = useState(usuario);
   const [actualizar_inf, setActualizarInf] = useState(false);
   const [datosFormulario, setDatosFormulario] = useState({
     nombre: "",
@@ -48,8 +48,6 @@ export default function Inf_Usuario({ usuario, signOut, auth }) {
     }
   };
 
-  const [usuarioPerfil, setUsuarioPerfil] = useState(null);
-
   const infPerfil = async () => {
     try {
       const docRef = doc(base_datos, "usuarios", user.uid);
@@ -75,11 +73,11 @@ export default function Inf_Usuario({ usuario, signOut, auth }) {
     }
   };
 
-  useEffect(() => {
-    if (user && user.uid) {
-      infPerfil();
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   if (!usuarioPerfil && user?.uid) {
+  //     infPerfil();
+  //   }
+  // }, [user]);
 
   return (
     <div>

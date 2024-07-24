@@ -3,6 +3,7 @@ import styles from "./MiniPantalla.module.css";
 import ImageCarousel from "./ImageCarousel";
 import CarImg from "../../../assets/carrito-de-compras.png";
 import CarShoppe from "./CarShoope/CarShoppe";
+import ComprarProducto from "./ComprarProducto/ComprarProducto";
 
 export default function MiniPantalla({
   id,
@@ -56,6 +57,7 @@ export default function MiniPantalla({
             {price}
           </p>
           <CarShoppe CarImg={CarImg} id={id} styles={styles} />
+          <ComprarProducto />
         </div>
       </div>
     </div>

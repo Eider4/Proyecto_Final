@@ -4,7 +4,7 @@ import { app, auth } from "../../Firebase/credenciales";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import ShoeProducts from "../../Components/ShowProducts/ShowProducts";
 import { useFetch } from "../../Hooks/UseFetch";
-import styles from './Add_Card.module.css'
+import styles from "./Add_Card.module.css";
 
 const basedatos = getFirestore(app);
 
@@ -12,7 +12,11 @@ export default function Add_Card() {
   const [user, setUser] = useState(null);
   const [ProductsAgregados, setProductsAgregados] = useState([]);
   const [ProductosFiltrados, setProductosFiltrados] = useState([]);
-  const { data: products, loading, error } = useFetch(`https://fakestoreapi.com/products`);
+  const {
+    data: products,
+    loading,
+    error,
+  } = useFetch(`https://fakestoreapi.com/products`);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (usuario) => {

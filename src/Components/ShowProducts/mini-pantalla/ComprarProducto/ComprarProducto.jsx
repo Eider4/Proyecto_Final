@@ -12,7 +12,6 @@ export default function ComprarProducto() {
       if (usuario) {
         setUser(usuario);
         CargarPerfil(usuario);
-        console.log("el usuario es: ", usuario.email);
       } else {
         console.log("error");
       }
@@ -26,5 +25,9 @@ export default function ComprarProducto() {
     setUserData(data);
   };
 
-  return <div></div>;
+  return (
+    <div>
+      <button>Comprar</button>
+    </div>
+  );
 }
