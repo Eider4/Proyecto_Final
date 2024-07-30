@@ -5,7 +5,7 @@
   overflow-x: auto; /* Habilita el scroll horizontal */
   padding: 10px 0; /* Espaciado vertical */
   scroll-behavior: smooth; /* Suaviza el desplazamiento */
-  width: 100%; /* Ajusta el contenedor al ancho disponible */
+  width: 90%; /* Ajusta el contenedor al ancho disponible */
 }
 
 .div_imagenes_categoy {

@@ -73,12 +73,6 @@ export default function Inf_Usuario({ user, signOut, auth }) {
     }
   };
 
-  // useEffect(() => {
-  //   if (!usuarioPerfil && user?.uid) {
-  //     infPerfil();
-  //   }
-  // }, [user]);
-
   return (
     <div>
       <h3 onClick={() => setActivo(true)}>

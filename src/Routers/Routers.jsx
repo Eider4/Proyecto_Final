@@ -1,11 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ShoeHeader from "../Components/ShoeHeader/ShowHeader";
-import Shoppe from "../Components/Shoppe";
+import ShoeHeader from "../Modules/ShoeHeader/ShowHeader";
+// import Shoppe from "../Modules/Shoppe";
 import Electronics from "../pages/Electronics/Electronics";
 import Jewelery from "../pages/jewelery/Jewelery";
 import Womens_clothing from "../pages/womens_clothing/womens_clothing";
 import Mens_clothing from "../pages/mens-clothing/Mens_clothing";
 import Add_Card from "../pages/Add_Card/Add_Card";
+import Shoppe from "../pages/Shoppe";
 
 
 export default function Routers() {

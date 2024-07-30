@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { collection, getDocs, addDoc, getFirestore } from "firebase/firestore";
 import { app } from "../../../Firebase/credenciales";
-import ShoeProducts from "../../ShowProducts/ShowProducts";
+import ShoeProducts from "../../../Modules/ShowProducts/ShowProducts";
+// import ShoeProducts from "../../ShowProducts/ShowProducts";
 // import { useEffect, useState } from "react";
 
 const db = getFirestore(app);
