@@ -9,9 +9,6 @@ import UseVerificacionUsario from "../../../Hooks/UseVerificacionUusario";
 const Login = () => {
   const [Login, setLogin] = useState(false);
   const { User: currentUser, registrado } = UseVerificacionUsario();
-  // console.log("user: ", currentUser);
-  // console.log("registrado: ", registrado);
-  // console.log({ Login });
 
   return (
     <div className={style.newHeaderInf}>

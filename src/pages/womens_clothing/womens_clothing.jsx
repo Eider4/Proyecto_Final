@@ -1,5 +1,5 @@
-import ShoeHeader from "../../Components/ShoeHeader/ShowHeader";
-import ShoeProducts from "../../Components/ShowProducts/ShowProducts";
+import ShoeHeader from "../../Modules/ShoeHeader/ShowHeader";
+import ShoeProducts from "../../Modules/ShowProducts/ShowProducts";
 import { useFetch } from "../../Hooks/UseFetch";
 
 function Womens_clothing() {

@@ -1,11 +1,9 @@
-/* Estilo del contenedor del video de fondo */
 .header_Video {
   position: relative;
   width: 100%;
-  height: 400px; /* Ajusta la altura según el diseño */
+  height: 400px;
   overflow: hidden;
 }
-
 
 .div_video_background {
   position: absolute;
@@ -22,19 +20,18 @@
   height: 100%;
 }
 
-
-/* Contenedor de categorías */
 .div_category_All {
+  margin-left: 3.3%;
   padding: 20px;
-  width: 100%;
-  background-color: #1e2a38; /* Azul oscuro metálico */
-  color: #ecf0f1; /* Blanco grisáceo */
+  width: 90%;
+  background-color: #1e2a38;
+  color: #ecf0f1;
 }
 
 .Categories_h1 {
   text-align: center;
   font-size: 36px;
-  color: #00bcd4; /* Cian vibrante */
+  color: #00bcd4;
   margin-bottom: 20px;
 }
 

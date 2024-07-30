@@ -23,7 +23,7 @@ export default function ShoeHeader({ category }) {
           <h1>{category}</h1>
         </div>
         <Input_search />
-        <Login usuario1={usuario1} setUsuario={setUsuario} />
+        <Login />
       </header>
       <div
         className={`${style.navegacion_botones_category} ${
@@ -37,24 +37,28 @@ export default function ShoeHeader({ category }) {
         >
           ✕
         </button>
-        <Link className="link" to="/electronics">
+        <Link className={style.link} to="/electronics">
           <button className={style.botones_category}>electronics</button>
         </Link>
-        <Link className="link" to="/jewelery">
+        <Link className={style.link} to="/jewelery">
           <button className={style.botones_category}>jewelery</button>
         </Link>
-        <Link className="link" to="/womens-clothing">
+        <Link className={style.link} to="/womens-clothing">
           <button className={style.botones_category}>women's clothing</button>
         </Link>
-        <Link className="link" to="/mens-clothing">
+        <Link className={style.link} to="/mens-clothing">
           <button className={style.botones_category}>men's clothing</button>
         </Link>
-        <Link className="link" to="/">
+        <Link className={style.link} to="/">
           <button className={style.botones_category}>
             Todos los Productos
           </button>
         </Link>
+<<<<<<< HEAD:src/Components/ShoeHeader/ShowHeader.jsx
         <Link className="link" to="/Carrito-compras">
+=======
+        <Link className={style.link} to="/Carrito-compras">
+>>>>>>> 871f0149a54794d597d22bfd6fcf6e49c34ba9c4:src/Modules/ShoeHeader/ShowHeader.jsx
           <button className={style.botones_category}>Car Shoppe</button>
 
           <div className={style.cantidad_products_car}>

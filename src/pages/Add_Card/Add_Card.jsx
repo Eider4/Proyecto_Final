@@ -2,7 +2,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { app, auth } from "../../Firebase/credenciales";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
-import ShoeProducts from "../../Components/ShowProducts/ShowProducts";
+import ShoeProducts from "../../Modules/ShowProducts/ShowProducts";
 import { useFetch } from "../../Hooks/UseFetch";
 import styles from "./Add_Card.module.css";
 
@@ -52,15 +52,22 @@ export default function Add_Card() {
       setProductsAgregados([]);
     }
   };
+  function irPaginaAnterior() {
+    window.history.back();
+  }
 
   if (loading) return <p>Cargando productos...</p>;
   if (error) return <p>Error al cargar productos: {error.message}</p>;
 
   return (
-    <div id="containerProducts" className={styles.container_products}>
-      {ProductosFiltrados.map((e) => (
-        <ShoeProducts key={e.id} {...e} />
-      ))}
-    </div>
+    <>
+      <button onClick={() => irPaginaAnterior()}>Volver</button>
+      <div id="containerProducts" className={styles.container_products}>
+        {ProductosFiltrados.map((e) => (
+          <ShoeProducts key={e.id} {...e} />
+        ))}
+      </div>
+      <button onClick={() => ""}>Comprar</button>
+    </>
   );
 }

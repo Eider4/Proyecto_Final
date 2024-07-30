@@ -2,8 +2,13 @@
 import React, { useEffect, useState } from "react";
 import { collection, getDocs, addDoc, getFirestore } from "firebase/firestore";
 import { app } from "../../../Firebase/credenciales";
+<<<<<<< HEAD:src/Components/Shoppe/Products/ObtenerDatos.jsx
 import ShoeProducts from "../../ShowProducts/ShowProducts";
 import { useFetch } from "../../../Hooks/UseFetch";
+=======
+import ShoeProducts from "../../../Modules/ShowProducts/ShowProducts";
+// import ShoeProducts from "../../ShowProducts/ShowProducts";
+>>>>>>> 871f0149a54794d597d22bfd6fcf6e49c34ba9c4:src/pages/Shoppe/Products/ObtenerDatos.jsx
 // import { useEffect, useState } from "react";
 
 const db = getFirestore(app);
