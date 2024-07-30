@@ -9,7 +9,7 @@ const Electronics = () => {
     data: products,
     loading,
     error,
-  } = useFetch(`https://fakestoreapi.com/products/category/${Category}`);
+  } = useFetch(`http://localhost:3001/electronics`);
   return (
     <>
       {error && <p>ERROR: {error}</p>}

@@ -4,6 +4,8 @@ import ImageCarousel from "./ImageCarousel";
 import CarImg from "../../../assets/carrito-de-compras.png";
 import CarShoppe from "./CarShoope/CarShoppe";
 import ComprarProducto from "./ComprarProducto/ComprarProducto";
+import Imagenes from "../../../assets/Imagenes";
+
 
 export default function MiniPantalla({
   id,
@@ -16,6 +18,7 @@ export default function MiniPantalla({
 }) {
   const [newImg] = useState([image]);
   const [imageShow, setImageShow] = useState(newImg[0]);
+  const [urlImage, setUrlImage] = useState(image);
 
   return (
     <div id="mini_pantalla" className={styles.mini_pantalla}>
@@ -29,9 +32,10 @@ export default function MiniPantalla({
           </span>
           <img
             className={styles.main_image}
-            src={imageShow}
+            src={urlImage}
+            onError={() => setUrlImage(Imagenes[id - 1])}
             alt={title}
-            title={title}
+            name={title}
           />
           <div className={styles.carousel_container}>
             <ImageCarousel

@@ -8,7 +8,7 @@ const Jewelery = () => {
     data: products,
     loading,
     error,
-  } = useFetch(`https://fakestoreapi.com/products/category/${Category}`);
+  } = useFetch(`http://localhost:3002/jewelery`);
   return (
     <>
       {error && <p>ERROR: {error}</p>}

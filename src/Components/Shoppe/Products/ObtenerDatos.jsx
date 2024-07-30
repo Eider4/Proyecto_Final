@@ -3,34 +3,16 @@ import React, { useEffect, useState } from "react";
 import { collection, getDocs, addDoc, getFirestore } from "firebase/firestore";
 import { app } from "../../../Firebase/credenciales";
 import ShoeProducts from "../../ShowProducts/ShowProducts";
+import { useFetch } from "../../../Hooks/UseFetch";
 // import { useEffect, useState } from "react";
 
 const db = getFirestore(app);
 const ProductsList = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [products, setProducts] = useState([]);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const colRef = collection(db, "products"); // Nombre de la colección
-        const snapshot = await getDocs(colRef);
-        const productsList = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setProducts(productsList);
-      } catch (err) {
-        setError("Error al obtener los datos.");
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
-  }, []);
+  const {data:products, loading, error} = useFetch('http://localhost:3000/products')
 
   if (loading) {
     return <div>Cargando productos...</div>;

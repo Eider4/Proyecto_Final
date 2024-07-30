@@ -8,7 +8,7 @@ function Womens_clothing() {
     data: products,
     loading,
     error,
-  } = useFetch(`https://fakestoreapi.com/products/category/${Category}`);
+  } = useFetch(`http://localhost:3004/womens_clothing`);
   return (
     <>
       {error && <p>ERROR: {error}</p>}

@@ -6,11 +6,11 @@ import CardProduct from "./CardProducts/CardProduct";
 
 export default function ShoeProducts({
   id,
-  title,
-  price,
-  image,
-  description,
-  category,
+  nombre,
+  precio,
+  imagen,
+  descripcion,
+  categoria,
   rating,
 }) {
   const [showMiniPantalla, setShowMiniPantalla] = useState(false);
@@ -20,11 +20,12 @@ export default function ShoeProducts({
       {showMiniPantalla && (
         <MiniPantalla
           id={id}
-          title={title}
-          price={price}
-          image={image}
-          description={description}
-          category={category}
+          title={nombre}
+          price={precio}
+          image={imagen}
+          description={descripcion}
+          category={categoria}
+          rating={rating}
           setShowMiniPantalla={setShowMiniPantalla}
         />
       )}
@@ -35,11 +36,11 @@ export default function ShoeProducts({
         {!showMiniPantalla && (
           <CardProduct
             id={id}
-            title={title}
-            price={price}
-            image={image}
-            description={description}
-            category={category}
+            title={nombre}
+            price={precio}
+            image={imagen}
+            description={descripcion}
+            category={categoria}
             rating={rating}
             setShowMiniPantalla={setShowMiniPantalla}
           />
