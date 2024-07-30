@@ -54,11 +54,7 @@ export default function ShoeHeader({ category }) {
             Todos los Productos
           </button>
         </Link>
-<<<<<<< HEAD:src/Components/ShoeHeader/ShowHeader.jsx
-        <Link className="link" to="/Carrito-compras">
-=======
         <Link className={style.link} to="/Carrito-compras">
->>>>>>> 871f0149a54794d597d22bfd6fcf6e49c34ba9c4:src/Modules/ShoeHeader/ShowHeader.jsx
           <button className={style.botones_category}>Car Shoppe</button>
 
           <div className={style.cantidad_products_car}>
