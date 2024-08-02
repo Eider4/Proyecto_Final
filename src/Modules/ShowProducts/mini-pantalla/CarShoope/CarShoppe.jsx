@@ -73,7 +73,7 @@ export default function CarShoppe({ id, CarImg, styles }) {
         <>
           <button
             // className={styles.button_borrar}
-            className="bg"
+            className="bg-[#e07e38] cursor-pointer rounded-sm w-auto h-6 pr-2 pl-2" 
             onClick={manejarToggleCarrito}
           >
             Eliminar
@@ -86,3 +86,16 @@ export default function CarShoppe({ id, CarImg, styles }) {
     </div>
   );
 }
+// .button_borrar {
+//   background-color: #e07e38;
+//   color: #fff;
+//   border: none;
+//   border-radius: 5px;
+//   padding: 10px 20px;
+//   cursor: pointer;
+//   transition: background-color 0.3s ease;
+// }
+
+// .button_borrar:hover {
+//   background-color: #b6784c;
+// }

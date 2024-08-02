@@ -1,17 +1,9 @@
-import { useEffect, useState } from "react";
-import { useFetch } from "../../Hooks/UseFetch";
 import videoSrc from "../../assets/tienda_online.mp4";
-// import Symbol_Category from "./Symbol_Category/Symbol_Category";
 import styles from "./ShoppeProducts.module.css";
-// import ProductsList from "./Products/ObtenerDatos";
-// import Symbol_Category from "../../Modules/Shoppe/Symbol_Category/Symbol_Category";
-// import ProductsList from "../../Modules/Shoppe/Products/ObtenerDatos";
-// import Symbol_Category from "../../Modules/Shoppe/Symbol_Category/Symbol_Category";
 import ProductsList from "./Products/ObtenerDatos";
-import Symbol_Category from './Symbol_Category/Symbol_Category'
+import Symbol_Category from "./Symbol_Category/Symbol_Category";
 
 export default function Shoppe() {
-
   return (
     <>
       <div className={styles.header_Video}>
