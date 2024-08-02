@@ -72,7 +72,8 @@ export default function CarShoppe({ id, CarImg, styles }) {
       {enCarrito && (
         <>
           <button
-            className={styles.button_borrar}
+            // className={styles.button_borrar}
+            className="bg"
             onClick={manejarToggleCarrito}
           >
             Eliminar
